@@ -73,6 +73,13 @@ nav a.active{
     display: none;
 }
 
+#close-menu {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
 section{
     min-height: 100vh;
     padding: 10rem 9% 10rem;
@@ -464,6 +471,12 @@ footer .copyright{
 @media(max-width: 895px) {
     #menu-icon {
         display: block;
+    }
+    #close-menu {
+        text-align: right;
+        margin-right: 25px;
+        display: block;
+        margin: 0;
     }
     nav {
         position: absolute;

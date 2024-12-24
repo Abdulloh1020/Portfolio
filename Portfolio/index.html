@@ -6,16 +6,18 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
 
     <header>
         <a href="#home" class="logo">Abdulloh <span>Ismoilov</span></a>
         <i class='bx bx-menu' id="menu-icon"></i>
-        <nav>
+        <nav> 
+            <i id="close-menu" class="bx bx-x"></i>
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -43,8 +45,9 @@
             <h2 class="heading2">About <span>Me</span></h2>
             <h3 class="text-animation"><span>Web Developer</span></h3>
             <p>My goal is to provide modern and functional websites for businesses and individuals in need of a strong online presence. I aim to help you successfully grow your business in the digital space with innovative and customized solutions.</p>
-            <a href="#" class="btn">Read More</a>
+            <a href="#" onclick="modal()" class="btn">Read More</a> 
         </div>
+        
         <div class="about-img">
             <img src="assets/download.jpg" alt="">
         </div>
@@ -127,7 +130,6 @@
             © Abdulloh Ismoilov | All Rights Reserved
         </p>
       </footer>
-
 
     <script src="js/script.js"></script>
 </body>

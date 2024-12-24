@@ -1,10 +1,10 @@
-let menuIcon = document.querySelector('#menu-icon'); // Menu icon
-let closeMenu = document.querySelector('#close-menu'); // Close button (X)
-let navbar = document.querySelector('nav'); // Navbar element
-let sections = document.querySelectorAll('section'); // Sectionlar
-let navLinks = document.querySelectorAll('header nav a'); // Navbar linklari
+let menuIcon = document.querySelector('#menu-icon');
+let closeMenu = document.querySelector('#close-menu'); 
+let navbar = document.querySelector('nav'); 
+let sections = document.querySelectorAll('section'); 
+let navLinks = document.querySelectorAll('header nav a');
 
-// Aktiv linklarni yangilash scroll event bilan
+
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -21,30 +21,27 @@ window.onscroll = () => {
     });
 };
 
-// Menyu ochish
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x'); // Menu icon o'zgarishi
-    navbar.classList.add('active'); // Navbar ochilishi
+    menuIcon.classList.toggle('bx-x'); 
+    navbar.classList.add('active'); 
 };
 
-// Menyu yopish (X tugmasi)
 closeMenu.onclick = () => {
-    navbar.classList.remove('active'); // Navbar yopilishi
-    menuIcon.classList.remove('bx-x'); // Menu icon boshlang'ich holatiga qaytadi
+    navbar.classList.remove('active'); 
+    menuIcon.classList.remove('bx-x'); 
 };
 
-// Mobil qurilmalarda menyu yopilganda linkni bosish
 navLinks.forEach(link => {
     link.onclick = () => {
-        navbar.classList.remove('active'); // Navbar yopilishi
-        menuIcon.classList.remove('bx-x'); // Menu icon boshlang'ich holatiga qaytadi
+        navbar.classList.remove('active'); 
+        menuIcon.classList.remove('bx-x'); 
     };
 });
 
-// Modal tashqarisiga bosganda menyuni yopish
+
 window.onclick = (event) => {
     if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
-        navbar.classList.remove('active'); // Navbar yopilishi
-        menuIcon.classList.remove('bx-x'); // Menu icon boshlang'ich holatiga qaytadi
+        navbar.classList.remove('active');
+        menuIcon.classList.remove('bx-x');
     }
 };

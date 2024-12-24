@@ -1,11 +1,10 @@
 let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('nav');
-let sections = document.querySelectorAll('section');
+let closeMenu = document.querySelector('#close-menu'); 
+let navbar = document.querySelector('nav'); 
+let sections = document.querySelectorAll('section'); 
 let navLinks = document.querySelectorAll('header nav a');
 
 
-
-// Aktiv linklarni yangilash scroll event bilan
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -16,14 +15,33 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*='+ id +']').classList.add('active')
+                document.querySelector('header nav a[href*='+ id +']')?.classList.add('active');
             });
         }
     });
 };
 
-// Menuni toggling
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x'); // Menu icon o'zgarishi
-    navbar.classList.toggle('active'); // Navbar ochilishi
+    menuIcon.classList.toggle('bx-x'); 
+    navbar.classList.add('active'); 
+};
+
+closeMenu.onclick = () => {
+    navbar.classList.remove('active'); 
+    menuIcon.classList.remove('bx-x'); 
+};
+
+navLinks.forEach(link => {
+    link.onclick = () => {
+        navbar.classList.remove('active'); 
+        menuIcon.classList.remove('bx-x'); 
+    };
+});
+
+
+window.onclick = (event) => {
+    if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+        navbar.classList.remove('active');
+        menuIcon.classList.remove('bx-x');
+    }
 };

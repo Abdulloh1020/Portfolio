@@ -437,8 +437,6 @@ footer .copyright{
 }
 
 
-
-/* Max-width: 1285px */
 @media(max-width: 1285px) {
     html {
         font-size: 55%;
@@ -450,7 +448,7 @@ footer .copyright{
     }
 }
 
-/* Max-width: 991px */
+
 @media(max-width: 991px) {
     header {
         padding: 2rem 3%;
@@ -467,7 +465,6 @@ footer .copyright{
     }
 }
 
-/* Max-width: 895px */
 @media(max-width: 895px) {
     #menu-icon {
         display: block;
